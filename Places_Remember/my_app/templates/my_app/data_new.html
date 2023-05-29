@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block css_additional %}
+
+    <link rel="stylesheet" href=" {% static 'my_app/css/my_app.css' %} ">
+    <link rel="stylesheet" href=" {% static 'my_app/css/data_new.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/base.css' %} ">
+
+{% endblock %}
+
+
+{% block title %}
+    Info
+{% endblock %}
+
+
+{% block content %}
+
+    {{ data_new }}
+    <div class="center">
+    {% for i in info %}
+        <li> {{ i.title }} </li>
+    {% empty %}
+        <p> У вас нет ни одного воспоминания </p>
+    {% endfor %}
+    </div>
+
+    <img src="{% static 'images/profile_photo.jpg' %}" alt="Your Image">
+    <div class="center">
+        <button><a href="http://127.0.0.1:8000/login/addmemory">Добавить воспоминание</a></button>
+        <button><a href="http://127.0.0.1:8000/login/">Выйти</a></button>
+        <button><a class="btn btn-primary" href="{% url 'logout' %}">Logout</a></button>
+    </div>
+
+{% endblock %}

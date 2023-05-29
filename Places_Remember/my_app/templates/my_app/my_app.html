@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href=" {% static 'my_app/css/my_app.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/base.css' %} ">
+{% endblock %}
+
+
+{% block title %}
+    Вход | PlacesRemember
+{% endblock %}
+
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+    <h1> PlacesRemember </h1>
+    <h2> Приложение, с помощью которого можно хранить свои впечатления о посещаемых местах, с возможностью указания места на карте </h2>
+  <div class="center">
+    <button><a class="btn btn-primary" href="{% url 'logout' %}">Logout</a></button>  
+    {% else %}
+    <h1> PlacesRemember </h1>
+    <h2> Приложение, с помощью которого можно хранить свои впечатления о посещаемых местах, с возможностью указания места на карте </h2>
+  <div class="center">
+    <button><a href="http://127.0.0.1:8000/login/google">Войти с помощью  Google</a></button>
+    <button><a href="http://127.0.0.1:8000/login/vk">Войти с помощью VK</a></button>
+
+    {% endif %}
+
+{% endblock %}

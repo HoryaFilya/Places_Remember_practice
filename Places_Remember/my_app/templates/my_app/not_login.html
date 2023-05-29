@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block css_additional %}
+
+    <link rel="stylesheet" href=" {% static 'my_app/css/my_app.css' %} ">
+    <link rel="stylesheet" href=" {% static 'my_app/css/data_new.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/base.css' %} ">
+
+{% endblock %}
+
+
+{% block title %}
+    Info
+{% endblock %}
+
+
+{% block content %}
+
+        <h2> Вы не авторизованы </h2>
+
+{% endblock %}

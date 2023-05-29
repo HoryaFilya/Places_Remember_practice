@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href=" {% static 'my_app/css/my_app.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/base.css' %} ">
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+{% endblock %}
+
+
+{% block title %}
+    Test
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="center">
+        <button><a href="/login/vk-oauth2">Разрешить доступ</a></button>
+    </div>
+
+
+{% endblock %}
